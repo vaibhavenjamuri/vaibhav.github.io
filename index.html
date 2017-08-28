@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html>
+<head>
   <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="ihover-gh-pages/src/ihover.min.css">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 <!--<link rel="stylesheet" href="bootstrap-4.0.0-alpha.6-dist/css/bootstrap.min.css">-->
 <script src="jquery/jquery-1.11.3.min.js"></script>
+<script src="jquery/jQueryRotate.2.1.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <script src=" http://d3js.org/d3.v3.min.js"></script>
+ <link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet">
 <!--<script src="bootstrap-4.0.0-alpha.6-dist/js/bootstrap.min.js"></script>-->
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-102412187-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
 <script>
-  
+//$(window).load(function() {
+//$(".test").animate({width:'100%',opacity: '1.0'}, 2000);
+var rotation = function (){
+   $(".loader").rotate({
+      angle:0, 
+      animateTo:1080, 
+	  duration:3000,
+     
+   });
+}
+
+	//console.log("hii");
+//})
 $(document).ready(function(){
 //  $(".circle").hover(function(){
   //$(".circle").text("hii");
 //});
-
-
-
-
+ rotation();
+$(".test").fadeOut(2000);
 var movementStrength = 25;
 var height = movementStrength / $(window).height();
 var width = movementStrength / $(window).width();
@@ -38,16 +43,17 @@ $(".parallax").mousemove(function(e){
           var newvalueY = height * pageY * -1 - 50;
           $('.parallax').css("background-position", newvalueX+"px     "+newvalueY+"px");
 });
+
   //Contact Link
   $("#linkcontact").click(function(){
   //$("html").animate({width:'100%',opacity: '0.4'}, "slow");
 //$("html").animate({height: '100%', opacity: '1.0'}, "slow");
 
   //$("#div1").css('opacity', 0);
-$("#div1").animate({width: '100%', opacity: '0.4'}, "slow");
+
 //$("#div1").animate({width: '100%', opacity: '0.8'}, "9000").show();
-$("#div1").animate({height: '100%', opacity: '1.0'}, "slow").show();
-//$("#div1").slideDown();
+
+$("#div1").slideDown();
 //$("#div1").show();
 
  //$('#div1').animate({opacity: 0.8}, {height:'100%',width: '100%', duration: '8000'});
@@ -64,7 +70,7 @@ $("#Intro").hide();
 $("#Projects").hide();
 $("#Contact").hide();
 $("#quotes").hide();
-
+  $("footer").hide();
 });//Contact Link End
 
    $("#divclose").click(function(){
@@ -82,7 +88,7 @@ $("#quotes").hide();
      $("#Intro").show();
      $("#Projects").show();
      $("#Contact").show();
-     $("#footer").show();
+     $("footer").show();
       $("#divclose").hide();
      $(".close").hide();
       $("#project1").hide();
@@ -91,7 +97,7 @@ $("#quotes").hide();
 
 });//Contact Form Close End
 
-$(".close").click(function(){
+$("#close").click(function(){
   //Projects Close
   $("#Intro").slideDown("slow");
   //$("html").animate({height:'100%',width:'100%', opacity: '1.0'}, "slow");
@@ -101,8 +107,8 @@ $(".close").click(function(){
     $("#quotes").show();
   $("#Projects").show();
   $("#Contact").show();
-  $("#footer").show();
-  $(".close").hide();
+  $("footer").show();
+  $("#close").hide();
       $("#divclose").hide();
   $("#project1").hide();
   $("#project2").hide();
@@ -112,42 +118,49 @@ $(".close").click(function(){
 
 $("#Apartment").click(function(){
 //APT Slides Link
-  $("#project1").animate({width: '100%', opacity: '0.8'}, "slow");
-  $("#project1").animate({height:'100%',opacity: '1.0'}, "slow");
+  
 
-     $("#project1").show();
+     $("#project1").slideDown("slow");
 $(".parallax").hide();
-  $(".close").show();
-   $("#arrow").show();
+  $("#close").show();
+  
        $("nav").hide();
   $("#Intro").hide();
   $("#Projects").hide();
   $("#Contact").hide();
   $("#quotes").hide();
-  $("#footer").hide();
+    $("footer").hide();
+	    $("#apartfooter").show();
+
 });//APT Slides Link Close
 
 $("#Planet").click(function(){
 //PTS Slide Link
- $("#project2").animate({width: '100%', opacity: '0.8'}, "slow");
- $("#project2").animate({height:'100%', opacity: '1.0'}, "slow");
+ 
 
-     $("#project2").show();
+     $("#project2").slideDown("slow");
 $(".parallax").hide();
-  $(".close").show();
-  $("#footer").hide();
+  $("#close").show();
+  
   $("nav").hide();
   $("#Intro").hide();
   $("#Projects").hide();
   $("#Contact").hide();
   $("#quotes").hide();
+      $("footer").hide();
 });//PTS Slides Close
 
 
 });
 
 </script>
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+</head>
+<body id="body1" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<div class="test">
+<div class="loader" ></div>
+</div>
 <!--Menu Bar-->
 <nav class="navbar navbar-inverse navbar-fixed-top">
 <div class="container-fluid">
@@ -164,21 +177,27 @@ $(".parallax").hide();
         <li><a href="#Intro">HOME</a></li>
         <li><a href="#Projects">PROJECTS</a></li>
         <li><a href="#Contact">CONTACT</a></li>
-        
+
       </ul>
     </div>
   </div>
 </div>
 </nav><!--Menu Close-->
-
-  <div id="project1"   style="font-family:'Lobster',cursive;font-size:24px;color:white;display:none;position:absolute;">
+  
+<div class="container-fluid" >
+<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12">
+<div id="project1"    style="font-size:24px;color:white;display:none;position:absolute;">
+  
 <!--ARS Slides-->
-
-<div id="projectss"  style="padding-top:120px;opacity:0.6;background-color:#f2f2f2;width:500px;height:500px;">
+<div class="col-md-12" id="imgproject1">
+<div id="projects2"  style="padding-top:120px;opacity:0.6;background-color:#f2f2f2;width:500px;height:400px;">
 <center><font size="60" style="opacity:1;color:black;">Project #1:</font>
   <h1 style="opacity:1;color:black;">Apartment Rental System</h1></center>
 </div>
-<br><br><br>
+</div>
+<br>
+<hr>
 <div class="row">
   <div class="col-md-6" >
   <div id="myCarousel"  style="opacity:1" class="carousel slide" data-ride="carousel">
@@ -221,17 +240,26 @@ $(".parallax").hide();
 </p>
 </div>
 </div>
+
+</div>
+</div>
+</div>
 </div>
 
-
-
-  <div id="project2"  style="font-family:'Lobster',cursive;font-size:24px;color:white;display:none;position:absolute;">
+<div class="container-fluid">
+<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12">
+  <div id="project2"  style="font-size:24px;color:white;display:none;position:absolute;">
 <!--PTS Slides-->
-<div id="projectss"  style="padding-top:120px;opacity:0.6;background-color:black;width:500px;height:500px;">
+<div class="col-md-12" id="imgproject2">
+<div id="projects2"  style="padding-top:120px;opacity:0.6;background-color:black;width:500px;height:400px;">
+
   <center><font size="60" style="opacity:1;color:white;">Project #2:</font>
     <h1 style="opacity:1;color:white;">Planet Tree System</h1></center>
+	</div>
 </div>
-<br><br><br>
+<br>
+<hr>
 <div class="row">
   <div class="col-md-6" >
   <div id="myCarousel"  style="opacity:1" class="carousel slide" data-ride="carousel">
@@ -281,6 +309,9 @@ $(".parallax").hide();
 </div>
 </div>
 </div>
+</div>
+</div>
+</div>
 <!--<div id="nextp" style="font-family:'Lobster',cursive;">
   <h1 style="color:black;">NEXT PROJECT</h1>
   <h1 style="color:black;">Apartment Rental System</h1>
@@ -288,14 +319,9 @@ $(".parallax").hide();
 </div><!--PTS Slides Close-->
 
 <div id="div1" style="display:none" >
-
-<div class="row" id="contact1">
-  <div class="col-sm-5">
-<img id="img9" src="images/wood.jpg" height="900" ></img>
-  </div>
-
-    <div class="col-sm-6" style="height:900px;font-family:'Lobster',cursive;color:white;background-color:black">
-<br><br>
+<div class="container-fluid">
+<div class="row" >
+  <div class="col-md-11" align="center" style="padding-top:200px;font-size:30px;font-family: 'Bellefair', serif;">
 <center><h3 style="line-height:200%;">I'm currently available for hire so if you're interested in starting a project together or would just like to say hi, the best way to do so is via email:</h3>
 </center>
 <center><h1>vaibhav.uiworld@gmail.com</h1>
@@ -303,18 +329,20 @@ $(".parallax").hide();
 </div>
 
 
-<div class="col-sm-1" style="height:800px;font-family:'Lobster',cursive;color:white;background-color:Slate gray">
-<br>
+
+
+<div class="col-md-1" style="font-family: 'Bellefair', serif;color:white;background-color:Slate gray">
+
 <div class="row"><!--circle-->
   <section align="center" class="section_0">
 
       <div class="circle circle1" align="center">
         <!--<a href="#section_1"><font style="font-family:'Lucida Grande';color:#3b5998" size="10px">f</font></a>-->
-<a target="_blank" title="find us on Facebook" href="https://www.facebook.com/enjamuri.vaibhav"><img alt="facebook" src="images/facebook_256.png" height="45px" width="45px" border=0></a>
+<a target="_blank" title="find us on Facebook" href="#"><img alt="facebook" src="images/facebook_256.png" height="45px" width="45px" border=0></a>
 </div>
       <div class="circle circle2">
     <!--   <a href="#section_2"><font style="font-family:'Lobster',cursive;color:#55ACEE"size="5px">twitter</font></a>-->
-<a target="_blank" title="follow me on twitter" href="http://www.twitter.com/PLACEHOLDER"><img alt="twitter" src="images/Twitter-256.png" height="45px" width="45px" border=0></a>-->
+<a target="_blank" title="follow me on twitter" href="#"><img alt="twitter" src="images/Twitter-256.png" height="45px" width="45px" border=0></a>
     </div>
       <div class="circle circle3">
     <!-- <a href="#section_3"><fontstyle="font-family:'Helvetica Neue';color:#55ACEE" size="10px">t</font></a>-->
@@ -322,20 +350,28 @@ $(".parallax").hide();
     </div>
     <div class="circle circle3">
   <!-- <a href="#section_3"><fontstyle="font-family:'Helvetica Neue';color:#55ACEE" size="10px">t</font></a>-->
-  <a target="_blank" title="Connect me" href="https://www.linkedin.com/in/vaibhavui"><img alt="LinkedIn" src="images/in.png" height="45px" width="45px" border=0></a>
+  <a target="_blank" title="Connect me" href="#"><img alt="LinkedIn" src="images/in.png" height="45px" width="45px" border=0></a>
   </div>
   <div class="circle circle3">
 <!-- <a href="#section_3"><fontstyle="font-family:'Helvetica Neue';color:#55ACEE" size="10px">t</font></a>-->
-<a target="_blank" title="Subscribe me" href="https://www.youtube.com/dashboard?o=U"><img alt="Youtube" src="images/Youtube-256.png" height="45px" width="45px" border=0></a>
+<a target="_blank" title="Subscribe me" href="#"><img alt="Youtube" src="images/Youtube-256.png" height="45px" width="45px" border=0></a>
+</div>
+ <div class="circle circle4" >
+        <!--<a href="#section_1"><font style="font-family:'Lucida Grande';color:#3b5998" size="10px">f</font></a>-->
+<a target="_blank" title="Github" href="#"><img alt="Github" src="images/github.png" height="45px" width="45px" border=0></a>
 </div>
   </section>
 </div><!--circle-->
 </div>
 </div>
 </div>
+</div>
 
 <!--Contact Form Close-->
-<div class="parallax"><!--Parallax-->
+<div class="container-fluid">
+<div class="row">
+			<div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+<div class="parallax" style="background-position: -23.5352px -42.9173px;"><!--Parallax-->
         <div id="Intro" ><!--Intro Section-->
           <center><h1>Hello I am<h1/></center>
                     <center id="name">VAIBHAV</center>
@@ -343,7 +379,12 @@ $(".parallax").hide();
                       </p><h1/></center>
         </div><!--Intro Section Close-->
 </div><!--Parallax Close-->
+</div>
+</div>
+</div>
 
+<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12">
     <div id="Projects"><!--Projects Section-->
       <center>MY PROJECTS</center>
 
@@ -352,7 +393,7 @@ $(".parallax").hide();
       <div class="col-md-6">
 
     <div class="hovereffect">
-        <img class="img-responsive" src="images/Apartment.jpg" alt="">
+        <img class="img-responsive" src="images/home2.jpg" alt="">
         <div class="overlay">
            <h2>Apartment Rental System</h2>
            <a id="Apartment" class="info" href="#">Show slides</a>
@@ -363,7 +404,7 @@ $(".parallax").hide();
           <div class="col-md-6">
 
                 <div class="hovereffect">
-                    <img class="img-responsive" src="images/Tree.jpg" alt="">
+                    <img class="img-responsive" width="100%" src="images/Tree3.jpg" alt="">
                     <div class="overlay">
                        <h2>Planet Tree System</h2>
                        <a id="Planet" class="info" href="#">Show Slides</a>
@@ -373,16 +414,27 @@ $(".parallax").hide();
           </div>
 
         </div><!--Projects Section Close-->
-
+		</div>
+		</div><br>
+		<div class="container-fluid">
+<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12">
 <div id="Contact"><!--Contacts Section-->
 
   <center><h1>Like to work with me? </h1>
   <a class="info" id="linkcontact" href="#Contact">CONTACT ME</a></center>
 </div><!--Contacts Section Close-->
+</div>
+</div>
+</div>
+<br><br>
+<div class="container">
+<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12">
 <div id="quotes">
-<div id="developerimg" style="height:500px" >
-  <div class="row">
-    <div class="col-sm-6" id="developer"  style="font-family:'Lobster',cursive;height:500px" >
+
+<div id="developerimg"  style="height:500px">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="developer"  style="font-family: 'Bellefair', serif;height:500px" >
 
 
 <h1 style="color:red;">DEVELOPER</h1>
@@ -391,39 +443,53 @@ $(".parallax").hide();
 
 <p align="center" style="font-size:20px;color:white;">However, that's just the tip of the iceberg. Code shouldn't only work, it should be easy to understand, easy to change and fun to work with. Developers need to strive for clean, elegant and efficient code to assure long-term sustainability and keep software's maintainability ―which goes beyond fixing bugs as it includes the need to adapt to a continuously changing environment.</p>
 </div>
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
+
 </div>
 </div>
 
-<div id="designerimg" style="height:500px">
-  <div class="row">
-      <div class="col-sm-6">
+
+
+<div  id="designerimg" style="height:500px">
+
+
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
       </div>
-<div class="col-sm-6" id="designer"  style="font-family:'Lobster',cursive;height:500px">
+<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="designer"  style="font-family: 'Bellefair', serif;height:500px">
 
       <h1 align="right" style="color:red;">DESIGNER</h1>
       <p align="center" style="font-size:30px;color:black;">"Good design is obvious. Great design is transparent."</p>
 <div align="right">
-      <font style="color:black;" font-size="3"> -Joe Sparano</font>
+      <font style="color:black;" font size="3"> -Joe Sparano</font>
       <p align="center"style="font-size:20px;color:black;">I'm a multi-disciplinary designer who is always learning and seeking to improve. Multi-disciplinary allows me to plan like an engineer, create like an artist and think like a customer. My creative curiosity of staying up-to-date allows me to adapt
         to a rapidly evolving industry without being left behind.</p>
 
 <p  align="center" style="font-size:20px;color:black;">Design really isn't just how it looks; the key to tackle a challenging problem through effective design thinking is to balance between the visual details and the usefulness it provides to the end user.</p>
+
 </div>
 </div>
 </div>
 </div>
 </div>
-<footer>
-<div align="center" id="footer"  style="font-size:20px;font-family:'Lobster',cursive;">
-  <span >&copy; Vaibhav</span>
 </div>
+</div>
+
+<footer class="row">
+			<div class="col-xs-12 col-md-12">
+
+  <span >&copy; Enjamuri</span>
+
+</div>
+
+
+
 </footer>
 
 
 
-<a href="#" id="divclose" style="display:none">
-<a href="#" class="close" style="display:none">
+<a href="#" class="glyphicon glyphicon-arrow-left" id="divclose" style="display:none">
+<a href="#" class="glyphicon glyphicon-arrow-left" id="close" style="display:none">
 
 
   </body>
