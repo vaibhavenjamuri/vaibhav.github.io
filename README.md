@@ -1,3 +1,6 @@
+![portfolio](https://github.com/vaibhavenjamuri/vaibhav.github.io/assets/16737687/7fa0407b-23cc-45ad-9f23-c061f718571c)
+
+
 ## Project Title
 Marvel Theme Porfolio
 
