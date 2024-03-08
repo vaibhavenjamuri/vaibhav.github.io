@@ -8,6 +8,10 @@ This Portfolio static web application describes best about the candidates work. 
 JQuery,
 Bootstrap5
 
+### Project Links
+<a href="https://vaibhavenjamuri.github.io/vaibhav.github.io/">Demo</a>
+<a href="https://github.com/vaibhavenjamuri/vaibhav.github.io.git">Project Repo</a>
+
 
 
 
