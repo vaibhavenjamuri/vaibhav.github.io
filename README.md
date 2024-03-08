@@ -1,11 +1,13 @@
-##Project Title
-
-<!-- ABOUT THE PROJECT -->
-## About The Project
+## Project Title
 Marvel Theme Porfolio
 
-**Description**
+## About The Project
 This Portfolio static web application describes best about the candidates work. This includes Academic projects. Working projects.
+
+### Built With
+JQuery
+Bootstrap5
+
 
 
 
