@@ -5,7 +5,7 @@ Marvel Theme Porfolio
 This Portfolio static web application describes best about the candidates work. This includes Academic projects. Working projects.
 
 ### Built With
-JQuery
+JQuery,
 Bootstrap5
 
 
